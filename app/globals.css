@@ -1,0 +1,168 @@
+:root {
+  color-scheme: dark;
+  --bg: #1b1a19;
+  --panel: #242326;
+  --panel-2: #2f2d33;
+  --accent: #6962f3;
+  --text: #f3f2f1;
+  --muted: #b9b8bf;
+  --success: #4ddb89;
+  --error: #ff8080;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Segoe UI, Arial, sans-serif;
+}
+
+.shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 64px;
+  display: grid;
+  grid-template-columns: 220px 1fr 140px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  background: #111015;
+  border-bottom: 1px solid #35333a;
+}
+
+.topbar input {
+  width: 100%;
+  border-radius: 8px;
+  background: #252429;
+  border: 1px solid #3a3841;
+  color: var(--muted);
+  padding: 10px 12px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+.sidebar {
+  border-right: 1px solid #393740;
+  padding: 20px;
+  background: #17161c;
+}
+
+.sidebar h1 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.sidebar p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar button {
+  text-align: left;
+  border: 1px solid #44424b;
+  background: #202027;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar button.active {
+  background: #34305a;
+  border-color: #7a77f5;
+}
+
+.content {
+  padding: 28px;
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+.game-card {
+  background: var(--panel);
+  border: 1px solid #413f47;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 16px;
+  max-width: 840px;
+}
+
+.display,
+.question {
+  background: var(--panel-2);
+  border: 1px solid #44424a;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #4d4a55;
+  background: #1b1b21;
+  color: var(--text);
+  padding: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #444;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  margin-bottom: 12px;
+}
+
+.success {
+  color: var(--success);
+}
+
+.error {
+  color: var(--error);
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #393740;
+  }
+}
